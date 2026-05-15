@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "Bundler",
+    "target": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "skipLibCheck": true,
+    "strict": true,
+    "jsx": "preserve"
+  },
+  "include": [
+    "**/*.vue",
+    "**/*.ts",
+    "node_modules/@slidev/client/shim.d.ts",
+    "node_modules/@slidev/client/shim-vue.d.ts"
+  ]
+}

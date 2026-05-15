@@ -1,0 +1,322 @@
+:root {
+  /* base font families */
+  --font-sans: 'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC', 'Arial', sans-serif;
+  --font-serif: 'Times New Roman', 'Songti SC', 'STSong', serif;
+  --font-mono: 'Fira Code', 'FiraCode Nerd Font Mono', ui-monospace, monospace;
+
+  /* global semantic fonts */
+  --font-default-heading: var(--font-sans);
+  --font-default-body: var(--font-sans);
+
+  /* layout semantic fonts */
+  --font-cover-title: var(--font-sans);
+  --font-cover-subtitle: var(--font-serif);
+  --font-cover-paper: var(--font-serif);
+  --font-cover-report: inherit;
+  --font-section-title: var(--font-sans);
+  --font-section-content: inherit;
+  --font-toc-title: var(--font-sans);
+  --font-toc-item: var(--font-sans);
+  --font-toc-meta: inherit;
+  --font-end-message: var(--font-sans);
+  --font-end-link-value: inherit;
+  --font-header-section-title: var(--font-sans);
+  --font-quote-cjk: 'Kaiti SC', 'Kaiti TC', 'Tsongti SC', serif;
+  --font-quote: var(--font-mono), var(--font-quote-cjk);
+
+  /* brand colors */
+  --atlas-primary-50: #eff5fc;
+  --atlas-primary-100: #dbe9f8;
+  --atlas-primary-200: #bfd6f1;
+  --atlas-primary-300: #94bae5;
+  --atlas-primary-400: #6697d6;
+  --atlas-primary-500: #3d74c6;
+  --atlas-primary-600: #1f5bac;
+  --atlas-primary-700: #003f88;
+  --atlas-primary-800: #00356f;
+  --atlas-primary-900: #00264f;
+  --atlas-primary-950: #001735;
+
+  --atlas-secondary-50: #fdf1f2;
+  --atlas-secondary-100: #f9dfe1;
+  --atlas-secondary-200: #f2bcc0;
+  --atlas-secondary-300: #e58e96;
+  --atlas-secondary-400: #d8616e;
+  --atlas-secondary-500: #c73f4f;
+  --atlas-secondary-600: #b92e3a;
+  --atlas-secondary-700: #b01f24;
+  --atlas-secondary-800: #8e181d;
+  --atlas-secondary-900: #691116;
+  --atlas-secondary-950: #47090d;
+
+  /* active palette */
+  --atlas-scheme-primary: var(--atlas-primary-700);
+  --atlas-scheme-secondary: var(--atlas-secondary-700);
+
+  /* default scheme: light */
+  --atlas-default-light-bg: white;
+  --atlas-default-light-bg-alt: var(--atlas-primary-700);
+  --atlas-default-light-bg-soft: var(--atlas-primary-200);
+  --atlas-default-light-bg-alt-soft: var(--atlas-primary-500);
+  --atlas-default-light-text: black;
+  --atlas-default-light-text-alt: white;
+  --atlas-default-light-text-soft: color-mix(in srgb, black 20%, var(--atlas-primary-700));
+  --atlas-default-light-text-alt-soft: color-mix(in srgb, white 80%, var(--atlas-primary-500));
+  --atlas-default-light-border: var(--atlas-primary-700);
+  --atlas-default-light-border-alt: var(--atlas-primary-900);
+  --atlas-default-light-border-soft: color-mix(in srgb, var(--atlas-primary-700) 80%, transparent);
+  --atlas-default-light-border-alt-soft: color-mix(in srgb, var(--atlas-primary-900) 80%, transparent);
+  --atlas-default-light-surface-bg: var(--atlas-primary-50);
+  --atlas-default-light-surface-text: black;
+  --atlas-default-light-surface-border: var(--atlas-primary-700);
+  --atlas-default-light-heading: black;
+  --atlas-default-light-hover: var(--atlas-primary-500);
+  --atlas-default-light-highlight: var(--atlas-secondary-700);
+  --atlas-default-light-highlight-soft: var(--atlas-secondary-500);
+
+
+  /* default scheme: dark */
+  --atlas-default-bg: color-mix(in srgb, var(--atlas-primary-900) 10%, transparent);
+  --atlas-default-bg-alt: color-mix(in srgb, var(--atlas-primary-500) 20%, transparent);
+  --atlas-default-bg-soft: color-mix(in srgb, var(--atlas-primary-900) 30%, transparent);
+  --atlas-default-bg-alt-soft: color-mix(in srgb, var(--atlas-primary-500) 40%, transparent);
+  --atlas-default-text: white;
+  --atlas-default-text-alt: white;
+  --atlas-default-text-soft: color-mix(in srgb, white 80%, var(--atlas-primary-900));
+  --atlas-default-text-alt-soft: color-mix(in srgb, white 80%, var(--atlas-primary-500));
+  --atlas-default-border: var(--atlas-primary-100);
+  --atlas-default-border-alt: var(--atlas-primary-400);
+  --atlas-default-border-soft: color-mix(in srgb, var(--atlas-primary-100) 80%, transparent);
+  --atlas-default-border-alt-soft: color-mix(in srgb, var(--atlas-primary-400) 80%, transparent);
+  --atlas-default-surface-bg: color-mix(in srgb, var(--atlas-primary-700) 10%, transparent);
+  --atlas-default-surface-text: var(--atlas-primary-200);
+  --atlas-default-surface-border: var(--atlas-primary-400);
+  --atlas-default-heading: white;
+  --atlas-default-hover: var(--atlas-primary-200);
+  --atlas-default-highlight: var(--atlas-secondary-400);
+  --atlas-default-highlight-soft: var(--atlas-secondary-200);
+
+  /* layout dimensions */
+  --header-height: 10%;
+  --footer-height: 2rem;
+  --page-gutter-x: 2rem;
+  --page-gutter-y: 1.5rem;
+
+  color-scheme: light;
+}
+
+/* global body font */
+.slidev-layout {
+  @apply font-[var(--font-default-body)];
+  --atlas-scheme-bg: var(--atlas-default-light-bg);
+  --atlas-scheme-text: var(--atlas-default-light-text);
+  --atlas-scheme-border: var(--atlas-default-light-border);
+  --atlas-scheme-bg-alt: var(--atlas-default-light-bg-alt);
+  --atlas-scheme-text-alt: var(--atlas-default-light-text-alt);
+  --atlas-scheme-border-alt: var(--atlas-default-light-border-alt);
+  --atlas-scheme-bg-soft: var(--atlas-default-light-bg-soft);
+  --atlas-scheme-text-soft: var(--atlas-default-light-text-soft);
+  --atlas-scheme-border-soft: var(--atlas-default-light-border-soft);
+  --atlas-scheme-bg-alt-soft: var(--atlas-default-light-bg-alt-soft);
+  --atlas-scheme-text-alt-soft: var(--atlas-default-light-text-alt-soft);
+  --atlas-scheme-border-alt-soft: var(--atlas-default-light-border-alt-soft);
+  --atlas-scheme-surface-bg: var(--atlas-default-light-surface-bg);
+  --atlas-scheme-surface-text: var(--atlas-default-light-surface-text);
+  --atlas-scheme-surface-border: var(--atlas-default-light-surface-border);
+  --atlas-scheme-heading: var(--atlas-default-light-heading);
+  --atlas-scheme-hover: var(--atlas-default-light-hover);
+  --atlas-scheme-highlight: var(--atlas-default-light-highlight);
+  --atlas-scheme-highlight-soft: var(--atlas-default-light-highlight-soft);
+  color: var(--atlas-scheme-text);
+  background-color: var(--atlas-scheme-bg);
+  color-scheme: light;
+}
+
+html.dark .slidev-layout {
+  --atlas-scheme-bg: var(--atlas-default-bg);
+  --atlas-scheme-text: var(--atlas-default-text);
+  --atlas-scheme-border: var(--atlas-default-border);
+  --atlas-scheme-bg-alt: var(--atlas-default-bg-alt);
+  --atlas-scheme-text-alt: var(--atlas-default-text-alt);
+  --atlas-scheme-border-alt: var(--atlas-default-border-alt);
+  --atlas-scheme-bg-soft: var(--atlas-default-bg-soft);
+  --atlas-scheme-text-soft: var(--atlas-default-text-soft);
+  --atlas-scheme-border-soft: var(--atlas-default-border-soft);
+  --atlas-scheme-bg-alt-soft: var(--atlas-default-bg-alt-soft);
+  --atlas-scheme-text-alt-soft: var(--atlas-default-text-alt-soft);
+  --atlas-scheme-border-alt-soft: var(--atlas-default-border-alt-soft);
+  --atlas-scheme-surface-bg: var(--atlas-default-surface-bg);
+  --atlas-scheme-surface-text: var(--atlas-default-surface-text);
+  --atlas-scheme-surface-border: var(--atlas-default-surface-border);
+  --atlas-scheme-heading: var(--atlas-default-heading);
+  --atlas-scheme-hover: var(--atlas-default-hover);
+  --atlas-scheme-highlight: var(--atlas-default-highlight);
+  --atlas-scheme-highlight-soft: var(--atlas-default-highlight-soft);
+  color: var(--atlas-scheme-text);
+  background-color: var(--atlas-scheme-bg);
+  color-scheme: dark;
+}
+
+/* base body rhythm */
+.slidev-layout {
+  @apply text-sm leading-6;
+  hyphens: auto;
+}
+
+/* headings */
+.slidev-layout h1 { @apply text-2xl leading-tight font-bold; }
+.slidev-layout h2 { @apply text-xl leading-tight font-bold; }
+.slidev-layout h3 { @apply text-lg leading-snug font-semibold; }
+.slidev-layout h4 { @apply text-base leading-snug font-semibold; }
+.slidev-layout h5 { @apply text-base leading-snug font-semibold font-italic; }
+.slidev-layout h6 { @apply text-sm leading-snug font-semibold tracking-[0em]; }
+
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3,
+.slidev-layout h4,
+.slidev-layout h5,
+.slidev-layout h6 { @apply text-[var(--atlas-scheme-heading)]; }
+
+/* spacing after headings for block-like elements */
+.slidev-layout :is(h2, h3, h4, h5, h6, p, ul, ol) + :is(
+  .slidev-code-wrapper, .slidev-katex-wrapper,
+  aside, section, blockquote, table, figure, div
+) { margin-top: 0.5rem !important; }
+
+.slidev-layout :is(h2, h3, h4, h5, h6, ul, ol) + :is(h2, h3, h4, h5, h6, p, ol, ul
+) { margin-top: 0.5rem !important; }
+
+.slidev-layout :is(aside, section, blockquote, table, figure, div,
+  .slidev-code-wrapper, .slidev-katex-wrapper) + :is(p, ul, ol, h2, h3, h4, h5, h6) { margin-top: 0.5rem !important; }
+
+/* body text */
+.slidev-layout blockquote > p { @apply text-xs my-0; }
+.slidev-layout p,
+.slidev-layout li,
+.slidev-layout td,
+.slidev-layout th,
+.slidev-layout em,
+.slidev-layout strong,
+.slidev-layout blockquote { @apply text-sm leading-normal; }
+
+.slidev-layout p { @apply my-0; }
+.slidev-layout p + :is(h2, h3, h4, h5, h6) { @apply mt-2; }
+
+.slidev-layout small,
+.slidev-layout figcaption { @apply text-xs leading-snug; }
+
+.slidev-layout strong { @apply text-[var(--atlas-scheme-highlight)]; }
+
+/* code: shared mono font */
+.slidev-layout :not(pre) > code { @apply font-[var(--font-mono)]; }
+
+/* code: inline */
+.slidev-layout :not(pre) > code { @apply bg-[var(--atlas-scheme-surface-bg)] text-[var(--atlas-scheme-surface-text)]; }
+
+/* code: block */
+.slidev-layout pre {
+  @apply border-[1.5px] border-[var(--atlas-scheme-surface-border)];
+  @apply bg-[var(--atlas-scheme-surface-bg)] text-[var(--atlas-scheme-surface-text)];
+}
+
+.slidev-layout pre code { background: transparent; color: inherit; }
+
+/* links and rules */
+.slidev-layout a {
+  @apply underline-dashed;
+}
+.slidev-layout a:hover { @apply text-[var(--atlas-scheme-hover)]; }
+
+.slidev-layout hr { @apply my-1.5 border-[var(--atlas-scheme-border-soft)]; }
+
+/* tables */
+.slidev-layout table { @apply w-full border-collapse; }
+.slidev-layout th { @apply font-semibold; }
+
+.slidev-layout thead th {
+  background: var(--atlas-scheme-surface-bg);
+  color: var(--atlas-scheme-surface-text);
+}
+
+.slidev-layout th,
+.slidev-layout td {
+  @apply p-1;
+  border: 1px solid var(--atlas-scheme-surface-border);
+}
+
+/* blockquotes */
+.slidev-layout blockquote {
+  @apply px-2 py-1 rounded-none;
+  @apply font-[var(--font-quote)];
+  border-left: 5px solid var(--atlas-scheme-surface-border);
+  background-color: var(--atlas-scheme-surface-bg);
+  color: var(--atlas-scheme-surface-text);
+}
+
+/* footnotes */
+.slidev-layout .footnotes { @apply font-[var(--font-serif)] font-normal text-justify tracking-[0.02em]; }
+.slidev-layout .footnotes-list { list-style-type: none; counter-reset: footnote-item; }
+.slidev-layout .footnotes-list > li { @apply pl-6; counter-increment: footnote-item; }
+.slidev-layout .footnotes-list > li::before {
+  @apply tracking-[0.04em];
+  color: var(--atlas-scheme-highlight);
+  content: "[" counter(footnote-item) "]";
+}
+.slidev-layout .footnote-ref,
+.slidev-layout .footnote-ref a,
+.slidev-layout .footnote-backref { @apply font-bold; color: var(--atlas-scheme-highlight); }
+
+/* unordered lists */
+.slidev-layout ul { list-style-type: none; @apply p-0; }
+.slidev-layout ul > li { @apply relative pl-5; }
+
+.slidev-layout ul > li::before { @apply absolute left-0; color: var(--atlas-scheme-highlight);}
+.slidev-layout ul > li::before { content: "●"; transform: scale(1.2);}
+.slidev-layout ul ul > li::before { content: "■"; transform: scale(1.2);}
+.slidev-layout ul ul ul > li::before { content: "▶"; transform: scale(0.75); }
+.slidev-layout ul ul ul ul > li::before { content: "-"; }
+
+/* ordered lists */
+.slidev-layout ol { list-style-type: none; @apply p-0; }
+.slidev-layout ol > li { @apply relative pl-5; }
+
+/* ordered list counters */
+.slidev-layout ol { counter-reset: ordered-level-1; }
+.slidev-layout ol ol { counter-reset: ordered-level-2; }
+.slidev-layout ol ol ol { counter-reset: ordered-level-3; }
+
+.slidev-layout ol > li { counter-increment: ordered-level-1; }
+.slidev-layout ol ol > li { counter-increment: ordered-level-2; }
+.slidev-layout ol ol ol > li { counter-increment: ordered-level-3; }
+
+.slidev-layout ol > li::before {
+  @apply absolute left-0 top-0 font-bold;
+  color: var(--atlas-scheme-highlight);
+}
+
+.slidev-layout ol > li::before { content: counter(ordered-level-1) "."; }
+.slidev-layout ol ol > li::before { content: counter(ordered-level-2, lower-alpha) "."; }
+.slidev-layout ol ol ol > li::before { content: counter(ordered-level-3, lower-roman) "."; }
+
+/* markdown task lists */
+.slidev-layout ul.contains-task-list, 
+.slidev-layout li.task-list-item { @apply pl-0; }
+
+.slidev-layout li.task-list-item::before { content: none; }
+
+.slidev-layout li.task-list-item input[type='checkbox'] {
+  @apply mr-2 inline-block align-middle;
+  accent-color: var(--atlas-scheme-surface-border);
+  transform: translateY(-0.05rem);
+}
+
+.slidev-layout li.task-list-item:has(> input[type='checkbox']:checked) {
+  text-decoration-line: line-through;
+  color: var(--atlas-scheme-surface-text);
+}
+
+.slidev-layout {
+  @apply absolute inset-0 h-full w-full p-0 m-0;
+  @apply overflow-hidden;
+}
