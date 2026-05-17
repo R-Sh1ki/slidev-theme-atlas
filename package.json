@@ -1,17 +1,38 @@
 {
   "name": "slidev-theme-atlas",
-  "version": "0.0.1",
-  "private": true,
+  "version": "0.1.0",
   "description": "A structured Slidev theme for academic and technical presentations.",
   "license": "MIT",
   "type": "module",
   "keywords": [
     "slidev",
     "slidev-theme",
-    "theme"
+    "theme",
+    "atlas",
+    "academic",
+    "presentation"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/R-Sh1ki/slidev-theme-atlas.git"
+  },
+  "homepage": "https://github.com/R-Sh1ki/slidev-theme-atlas#readme",
+  "bugs": {
+    "url": "https://github.com/R-Sh1ki/slidev-theme-atlas/issues"
+  },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "files": [
+    "components",
+    "layouts",
+    "styles",
+    "assets",
+    "docs/previews",
+    "uno.config.ts"
+  ],
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "dev": "slidev example.md --open",
