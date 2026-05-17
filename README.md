@@ -16,11 +16,11 @@ ATLAS is a structured [Slidev](https://sli.dev/) theme for academic and technica
 
 |                         Cover                         |                 Component Schemes                  |
 | :---------------------------------------------------: | :------------------------------------------------: |
-|    ![ATLAS cover preview](docs/previews/cover.png)    | ![ATLAS scheme preview](docs/previews/schemes.png) |
+|    ![ATLAS cover preview](https://raw.githubusercontent.com/R-Sh1ki/slidev-theme-atlas/main/docs/previews/cover.png)    | ![ATLAS scheme preview](https://raw.githubusercontent.com/R-Sh1ki/slidev-theme-atlas/main/docs/previews/schemes.png) |
 |                  Timeline Components                  |                  Media Components                  |
-| ![ATLAS timeline preview](docs/previews/timeline.png) |  ![ATLAS media preview](docs/previews/image.png)   |
+| ![ATLAS timeline preview](https://raw.githubusercontent.com/R-Sh1ki/slidev-theme-atlas/main/docs/previews/timeline.png) |  ![ATLAS media preview](https://raw.githubusercontent.com/R-Sh1ki/slidev-theme-atlas/main/docs/previews/image.png)   |
 |                    Layout Overview                    |                     End Layout                     |
-|  ![ATLAS layout preview](docs/previews/layouts.png)   |    ![ATLAS end preview](docs/previews/end.png)     |
+|  ![ATLAS layout preview](https://raw.githubusercontent.com/R-Sh1ki/slidev-theme-atlas/main/docs/previews/layouts.png)   |    ![ATLAS end preview](https://raw.githubusercontent.com/R-Sh1ki/slidev-theme-atlas/main/docs/previews/end.png)     |
 
 ## Overview
 
@@ -54,7 +54,7 @@ ATLAS includes several theme-specific conventions for academic decks:
 - An **end layout** that can render structured links, contact methods, and a QR code.
 - Layouts for **code, figures, iframes, timelines, framed statements, and section transitions**.
 
-Cover metadata is configured through headermatter:
+Cover metadata is configured through frontmatter:
 
 ```yaml
 ---
@@ -65,11 +65,11 @@ reporter: ATLAS
 email: atlas@example.com
 conference: Theme Design Review
 location: Beijing, China
-headerlogo: /assets/atlas-test-logo.svg
+headerlogo: /assets/your-logo.svg
 logos:
-  - src: /assets/atlas-test-logo.svg
-  - src: /assets/atlas-test-logo.svg
-  - src: /assets/atlas-test-logo.svg
+  - src: /assets/your-logo.svg
+  - src: /assets/partner-logo-a.svg
+  - src: /assets/partner-logo-b.svg
 authors:
   - name: Ryougi Shiki
     inst_id: [1]
@@ -83,7 +83,7 @@ institutions:
 ---
 ```
 
-The principal theme-specific headermatter fields are listed below:
+The principal theme-specific frontmatter fields are listed below:
 
 |     Field      | Purpose                                         |
 | :------------: | ----------------------------------------------- |
@@ -109,7 +109,7 @@ end_items:
   - [GitHub, github, R-Sh1ki/slidev-theme-atlas]
   - [Email, email, atlas@example.com]
   - [Website, website, atlas.example.com]
-  - [ATLAS LAB, wechat, /assets/atlas-test-qrcode.png]
+  - [ATLAS LAB, wechat, /assets/your-wechat-qr.png]
 ---
 ```
 
@@ -278,9 +278,9 @@ reporter: Example Author
 email: example@lab.edu
 conference: Internal Research Review
 location: Shanghai, China
-headerlogo: /assets/atlas-test-logo.svg
+headerlogo: /assets/your-logo.svg
 logos:
-  - src: /assets/atlas-test-logo.svg
+  - src: /assets/your-logo.svg
 authors:
   - name: Example Author
     inst_id: [1]
@@ -371,4 +371,4 @@ npm run screenshot -- --output docs/screenshots
 - [`styles/`](styles): shared theme styles and color system
 - [`assets/`](assets): local media and example assets
 - [`example.md`](example.md): full theme preview deck
-- [`docs/previews`](docs/previews): curated preview images used by the README
+- [`docs/previews`](https://github.com/R-Sh1ki/slidev-theme-atlas/tree/main/docs/previews): curated preview images used by the README
