@@ -1,13 +1,13 @@
 <template>
-  <LayoutFrame content-class="fact-layout-content">
+  <AtlasPage content-class="fact-layout-content">
     <div class="fact-layout-inner">
       <slot />
     </div>
-  </LayoutFrame>
+  </AtlasPage>
 </template>
 
 <script setup lang="ts">
-import LayoutFrame from '../components/AtlasPage.vue'
+import AtlasPage from '../components/AtlasPage.vue'
 </script>
 
 <style>

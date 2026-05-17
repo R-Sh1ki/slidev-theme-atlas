@@ -1,15 +1,15 @@
 <template>
-  <LayoutFrame content-class="image-side-layout-content">
+  <AtlasPage content-class="image-side-layout-content">
     <div class="image-side-layout-text" :class="props.class">
       <slot />
     </div>
 
     <AtlasImage class="h-full" :image="image" :fit="fit" :caption="caption" />
-  </LayoutFrame>
+  </AtlasPage>
 </template>
 
 <script setup lang="ts">
-import LayoutFrame from '../components/AtlasPage.vue'
+import AtlasPage from '../components/AtlasPage.vue'
 import AtlasImage from '../components/AtlasImage.vue'
 
 const props = defineProps({
