@@ -36,7 +36,7 @@ const props = defineProps({
 })
 
 const nav = useNav()
-const { $slidev, $frontmatter } = useSlideContext()
+const { $slidev, $frontmatter, $page } = useSlideContext()
 const pageBodyRef = ref<HTMLElement>()
 const pageContentRef = ref<HTMLElement>()
 const footnotesHeight = ref(0)
@@ -59,7 +59,8 @@ const logo = computed(() => headmatter.value?.headerlogo ?? '')
 // Page-level switches override defaults.
 const showHeader = computed(() => $frontmatter?.showHeader ?? headmatter.value?.showHeader ?? true)
 const showFooter = computed(() => $frontmatter?.showFooter ?? headmatter.value?.showFooter ?? true)
-const pageNumber = computed(() => nav.currentPage.value ?? '')
+const currentPageNo = computed(() => Number($page?.value ?? nav.currentPage.value ?? 1))
+const pageNumber = computed(() => currentPageNo.value || '')
 
 // Remove reserved header/footer space when either region is hidden.
 const pageStyle = computed<StyleValue>(() => ({
@@ -71,11 +72,10 @@ const pageStyle = computed<StyleValue>(() => ({
 }))
 
 const slides = computed(() => nav.slides.value)
-const slideNumber = computed(() => nav.currentSlideNo.value)
 
 // Use the current slide section first, then inherit the nearest previous section title.
 const sectionTitle = computed(() => {
-  const slideIndex = Math.max(0, Math.min(slides.value.length - 1, slideNumber.value - 1))
+  const slideIndex = Math.max(0, Math.min(slides.value.length - 1, currentPageNo.value - 1))
   const slideFrontmatter = slides.value[slideIndex]?.meta?.slide?.frontmatter
 
   if (slideFrontmatter?.section)
@@ -150,7 +150,7 @@ onMounted(() => {
   }
 })
 
-watch(() => nav.currentSlideNo.value, () => {
+watch(() => currentPageNo.value, () => {
   updateFootnotesLayout()
 })
 

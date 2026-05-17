@@ -35,18 +35,17 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import type { SlideInfo } from '@slidev/types'
-import { useNav, useSlideContext } from '@slidev/client'
+import { useSlideContext } from '@slidev/client'
 
-const nav = useNav()
-const { $slidev } = useSlideContext()
-
-const currentFrontmatter = computed<Record<string, any>>(
-  () => nav.currentSlideRoute.value?.meta?.slide?.frontmatter ?? {}
-)
+const { $slidev, $frontmatter } = useSlideContext()
 
 const frontmatter = computed(() => {
   return $slidev.configs as SlideInfo['frontmatter']
 })
+
+const currentFrontmatter = computed<Record<string, any>>(
+  () => ($frontmatter as Record<string, any> | undefined) ?? {}
+)
 
 interface EndLogo {
   src: string
