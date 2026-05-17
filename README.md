@@ -14,17 +14,13 @@ ATLAS is a structured [Slidev](https://sli.dev/) theme for academic and technica
 
 ## Preview
 
-|                      Cover                      |                 Component Schemes                  |
-| :---------------------------------------------: | :------------------------------------------------: |
-| ![ATLAS cover preview](docs/previews/cover.png) | ![ATLAS scheme preview](docs/previews/schemes.png) |
-
-|                  Timeline Components                  |                Media Components                 |
-| :---------------------------------------------------: | :---------------------------------------------: |
-| ![ATLAS timeline preview](docs/previews/timeline.png) | ![ATLAS media preview](docs/previews/image.png) |
-
-|                  Layout Overview                   |                 End Layout                  |
-| :------------------------------------------------: | :-----------------------------------------: |
-| ![ATLAS layout preview](docs/previews/layouts.png) | ![ATLAS end preview](docs/previews/end.png) |
+|                         Cover                         |                 Component Schemes                  |
+| :---------------------------------------------------: | :------------------------------------------------: |
+|    ![ATLAS cover preview](docs/previews/cover.png)    | ![ATLAS scheme preview](docs/previews/schemes.png) |
+|                  Timeline Components                  |                  Media Components                  |
+| ![ATLAS timeline preview](docs/previews/timeline.png) |  ![ATLAS media preview](docs/previews/image.png)   |
+|                    Layout Overview                    |                     End Layout                     |
+|  ![ATLAS layout preview](docs/previews/layouts.png)   |    ![ATLAS end preview](docs/previews/end.png)     |
 
 ## Overview
 
