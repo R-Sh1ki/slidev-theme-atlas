@@ -14,45 +14,94 @@ ATLAS is a structured [Slidev](https://sli.dev/) theme for academic and technica
 
 ## Preview
 
-|                         Cover                         |                 Component Schemes                  |
-| :---------------------------------------------------: | :------------------------------------------------: |
+|                                                          Cover                                                          |                                                  Component Schemes                                                   |
+| :---------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------: |
 |    ![ATLAS cover preview](https://raw.githubusercontent.com/R-Sh1ki/slidev-theme-atlas/main/docs/previews/cover.png)    | ![ATLAS scheme preview](https://raw.githubusercontent.com/R-Sh1ki/slidev-theme-atlas/main/docs/previews/schemes.png) |
-|                  Timeline Components                  |                  Media Components                  |
+|                                                   Timeline Components                                                   |                                                   Media Components                                                   |
 | ![ATLAS timeline preview](https://raw.githubusercontent.com/R-Sh1ki/slidev-theme-atlas/main/docs/previews/timeline.png) |  ![ATLAS media preview](https://raw.githubusercontent.com/R-Sh1ki/slidev-theme-atlas/main/docs/previews/image.png)   |
-|                    Layout Overview                    |                     End Layout                     |
+|                                                     Layout Overview                                                     |                                                      End Layout                                                      |
 |  ![ATLAS layout preview](https://raw.githubusercontent.com/R-Sh1ki/slidev-theme-atlas/main/docs/previews/layouts.png)   |    ![ATLAS end preview](https://raw.githubusercontent.com/R-Sh1ki/slidev-theme-atlas/main/docs/previews/end.png)     |
 
-## Overview
+## Features
 
-ATLAS is designed around three priorities:
+- **Academic Style:** paper-style cover metadata, structured sectioning, shared headers and footers, and a contact-oriented end page
+- **Comprehensive Layouts:** fixed, content, and framed layouts for common presentation patterns
+- **Rich Components:** reusable components with one shared `scheme` color API
+- **Light/Dark Support:** consistent adaptation across both color modes
+- **Brand Customization:** editable `primary` and `secondary` palette families
+- **Media Support:** image, video, iframe, and background components for technical presentations
 
-1. **Academic and technical presentation support**  
-   The theme provides a paper-style cover, a structured header and footer, section pages, a contact-oriented end page, and layout patterns that work well for code, figures, comparisons, and research narrative.
+### Academic and Technical Presentation Support
 
-2. **A rich component system with one shared color API**  
-   Inline annotations, content blocks, metrics, comparison components, timelines, and media components all share the same `scheme` interface and adapt consistently across light and dark themes.
+ATLAS is designed for research talks, internal reviews, lecture decks, and technical presentations that need more structure than a generic slide theme. It includes a paper-style cover, section pages, a consistent header and footer frame for content layouts, and an end page that presents contact information and institutional links in a compact academic format.
 
-3. **Brand-level customization through `primary` and `secondary` palettes**  
-   ATLAS exposes the full `--atlas-primary-*` and `--atlas-secondary-*` color families in [`styles/layout.css`](styles/layout.css), so the theme can be adapted to institutional visual systems without redesigning the component set.
+The theme supports:
 
-## Theme-Specific Configuration
+- title, subtitle, presenter, email, conference, location, and date metadata
+- optional author and institution lists on the cover
+- logos on the cover, header, and end page
+- structured contact and link items on the end page
+- section pages and framed layouts for transitions, statements, facts, and quotations
 
-- [Cover metadata](#1-academic-and-technical-presentation-support)
-- [End page links and contacts](#1-academic-and-technical-presentation-support)
-- [Shared component schemes](#2-rich-components-with-a-unified-scheme-interface)
-- [Primary and secondary palette customization](#3-customizable-primary-and-secondary-brand-colors)
+### Layout Overview
 
-## Theme Features
+ATLAS layouts are organized into three groups:
 
-### 1. Academic and Technical Presentation Support
+| Category        | Layouts                                                                                                                           | Notes                                                                        |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Fixed layouts   | `cover`, `section`, `toc`, `end`                                                                                                  | Fully structured pages for sectioning, navigation, and metadata-heavy slides |
+| Content layouts | `default`, `center`, `two-cols`, `two-cols-header`, `image`, `image-left`, `image-right`, `iframe`, `iframe-left`, `iframe-right` | Standard layouts for author-controlled slide content                         |
+| Framed layouts  | `intro`, `fact`, `statement`, `quote`                                                                                             | More opinionated layouts with a defined visual role                          |
 
-ATLAS includes several theme-specific conventions for academic decks:
+### Component Overview
 
-- A **cover layout** with title, subtitle, presenter information, conference details, location, date, author list, and institution list.
-- A **shared header and footer frame** for content layouts.
-- Support for **logos on the cover, header, and end page**.
-- An **end layout** that can render structured links, contact methods, and a QR code.
-- Layouts for **code, figures, iframes, timelines, framed statements, and section transitions**.
+ATLAS provides a reusable component set for technical slide content:
+
+| Category            | Components                                                                   |
+| ------------------- | ---------------------------------------------------------------------------- |
+| Inline              | `AtlasEyebrow`, `AtlasPill`, `AtlasDot`, `AtlasKbd`, `AtlasStep`             |
+| Content             | `AtlasCard`, `AtlasBlock`, `AtlasCallout`, `AtlasTool`                       |
+| Data and comparison | `AtlasStat`, `AtlasMetric`, `AtlasPros`, `AtlasCons`, `AtlasCompare`         |
+| Timeline            | `AtlasTimeline`, `AtlasTimelineItem`, `AtlasTimelineH`, `AtlasTimelineHItem` |
+| Media               | `AtlasImage`, `AtlasVideo`, `AtlasIframe`, `AtlasBackground`                 |
+
+All visual components share the same `scheme` API. This keeps color treatment consistent across categories and allows the same component usage to adapt naturally between light and dark themes.
+
+### Color System
+
+ATLAS provides four theme-level schemes: `default`, `primary`, `secondary`, and `ink`. It also supports the Tailwind color families from `slate` through `rose`. Because the `scheme` interface is shared, one palette choice can be applied consistently across cards, callouts, metrics, tags, timelines, and media containers.
+
+ATLAS is also designed to be adapted. The full `--atlas-primary-*` and `--atlas-secondary-*` token families are defined in [`styles/layout.css`](styles/layout.css), so the theme can be aligned with an institutional visual identity without redesigning the layout and component system.
+
+## Usage
+
+### Installation
+
+Install the theme in a Slidev deck:
+
+```bash
+npm install -D slidev-theme-atlas
+```
+
+Enable it in slide frontmatter:
+
+```yaml
+---
+theme: atlas
+---
+```
+
+For local development before publishing, a relative path also works:
+
+```yaml
+---
+theme: ../slidev-theme-atlas
+---
+```
+
+### Theme-Specific Configuration
+
+#### Cover Layout
 
 Cover metadata is configured through frontmatter:
 
@@ -60,16 +109,15 @@ Cover metadata is configured through frontmatter:
 ---
 theme: atlas
 title: ATLAS Theme Preview
-subtitle: A structured Slidev theme for academic presentation
+subtitle: A structured Slidev theme for academic presentations
 reporter: ATLAS
 email: atlas@example.com
 conference: Theme Design Review
 location: Beijing, China
-headerlogo: /assets/your-logo.svg
 logos:
-  - src: /assets/your-logo.svg
-  - src: /assets/partner-logo-a.svg
-  - src: /assets/partner-logo-b.svg
+  - src: /assets/atlas-test-logo.svg
+  - src: /assets/atlas-test-logo.svg
+  - src: /assets/atlas-test-logo.svg
 authors:
   - name: Ryougi Shiki
     inst_id: [1]
@@ -80,6 +128,7 @@ institutions:
     name: Atlas Lab
   - id: 2
     name: Slide Theme Group
+headerlogo: /assets/atlas-test-logo.svg
 ---
 ```
 
@@ -100,6 +149,8 @@ The principal theme-specific frontmatter fields are listed below:
 |  `showHeader`  | Per-slide override for the shared header        |
 |  `showFooter`  | Per-slide override for the shared footer        |
 
+#### End Layout
+
 The end layout supports structured contact and link items through `end_items`:
 
 ```yaml
@@ -109,8 +160,12 @@ end_items:
   - [GitHub, github, R-Sh1ki/slidev-theme-atlas]
   - [Email, email, atlas@example.com]
   - [Website, website, atlas.example.com]
-  - [ATLAS LAB, wechat, /assets/your-wechat-qr.png]
+  - [ATLAS LAB, wechat, /assets/atlas-test-qrcode.png]
 ---
+
+# Thank you for listening!
+
+## Question & Discussion
 ```
 
 Supported icon keys include:
@@ -134,17 +189,9 @@ For most cases, the compact tuple form is sufficient:
 - [Label, icon, value]
 ```
 
-### 2. Rich Components with a Unified Scheme Interface
+### Component Usage
 
-ATLAS provides a reusable component set for technical slides:
-
-- **Inline components**: `AtlasEyebrow`, `AtlasPill`, `AtlasDot`, `AtlasKbd`, `AtlasStep`
-- **Content components**: `AtlasCard`, `AtlasBlock`, `AtlasCallout`, `AtlasTool`
-- **Data and comparison components**: `AtlasStat`, `AtlasMetric`, `AtlasPros`, `AtlasCons`, `AtlasCompare`
-- **Timeline components**: `AtlasTimeline`, `AtlasTimelineItem`, `AtlasTimelineH`, `AtlasTimelineHItem`
-- **Media components**: `AtlasImage`, `AtlasVideo`, `AtlasIframe`, `AtlasBackground`
-
-All visual components share the same `scheme` API. This keeps color treatment consistent across component categories and allows light and dark themes to adapt automatically without changing component usage.
+ATLAS components are designed to be used directly inside Markdown slides, with a shared `scheme` interface:
 
 ```html
 <AtlasCard scheme="secondary" body-class="px-4 py-3">
@@ -162,54 +209,11 @@ All visual components share the same `scheme` API. This keeps color treatment co
 />
 ```
 
-ATLAS supports:
+The same `scheme` value can be reused across content, annotation, metric, timeline, and media components without changing the surrounding layout logic.
 
-- the four theme-level schemes: `default`, `primary`, `secondary`, `ink`
-- the Tailwind color families from `slate` through `rose`
+### Theme Customization
 
-Because the scheme system is shared, a single palette choice can be applied consistently across cards, callouts, metrics, tags, timelines, and media containers.
-
-### 3. Customizable `primary` and `secondary` Brand Colors
-
-ATLAS is designed to be adapted. The theme exposes full `primary` and `secondary` color families in [`styles/layout.css`](styles/layout.css), and the rest of the visual system derives from them.
-
-An institution can therefore update the palette once and retain the rest of the theme structure unchanged.
-
-The relevant tokens are:
-
-```css
---atlas-primary-50
---atlas-primary-100
---atlas-primary-200
---atlas-primary-300
---atlas-primary-400
---atlas-primary-500
---atlas-primary-600
---atlas-primary-700
---atlas-primary-800
---atlas-primary-900
---atlas-primary-950
-
---atlas-secondary-50
---atlas-secondary-100
---atlas-secondary-200
---atlas-secondary-300
---atlas-secondary-400
---atlas-secondary-500
---atlas-secondary-600
---atlas-secondary-700
---atlas-secondary-800
---atlas-secondary-900
---atlas-secondary-950
-```
-
-The typical customization flow is:
-
-1. Replace the `--atlas-primary-*` family with the institution’s main color scale.
-2. Replace the `--atlas-secondary-*` family with the accent or contrast color scale.
-3. Keep the rest of the theme logic unchanged so headers, footers, layouts, and components continue to adapt automatically.
-
-For example:
+The theme is intended to be customized primarily through its color tokens. The full `primary` and `secondary` families can be updated in [`styles/layout.css`](styles/layout.css):
 
 ```css
 :root {
@@ -239,136 +243,19 @@ For example:
 }
 ```
 
-## Detailed Usage
-
-### Install the theme
-
-After the package is published, install it in another Slidev deck:
-
-```bash
-npm add -D slidev-theme-atlas
-```
-
-Then enable it in slide frontmatter:
-
-```yaml
----
-theme: atlas
----
-```
-
-For local development before publishing, a relative path also works:
-
-```yaml
----
-theme: ../slidev-theme-atlas
----
-```
-
-### Minimal Deck Example
-
-```yaml
----
-theme: atlas
-layout: cover
-colorSchema: light
-title: Structured Presentation Design
-subtitle: A concise example deck built with ATLAS
-reporter: Example Author
-email: example@lab.edu
-conference: Internal Research Review
-location: Shanghai, China
-headerlogo: /assets/your-logo.svg
-logos:
-  - src: /assets/your-logo.svg
-authors:
-  - name: Example Author
-    inst_id: [1]
-institutions:
-  - id: 1
-    name: Example Lab
----
-```
-
-### Section and Content Example
-
-```yaml
----
-layout: section
-section: Components
----
-This section introduces the reusable ATLAS component set.
----
-layout: two-cols-header
----
-# Component Schemes
-
-ATLAS keeps component colors consistent with one shared `scheme` API.
-
-::left::
-
-<AtlasCard scheme="secondary" body-class="px-4 py-3">
-  Secondary scheme
-</AtlasCard>
-
-::right::
-
-<AtlasCard scheme="secondary" body-class="px-4 py-3">
-  Secondary scheme
-</AtlasCard>
-```
-
-### End Page Example
-
-```yaml
----
-layout: end
-end_items:
-  - [GitHub, github, your-org/your-repo]
-  - [Email, email, contact@example.edu]
-  - [Website, website, example.edu]
----
-```
-
-## Layouts
-
-| Category        | Layouts                                                                                                                           | Notes                                                                       |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| Fixed layouts   | `cover`, `end`, `toc`, `section`                                                                                                  | Used for title pages, closing pages, navigation, and section transitions    |
-| Content layouts | `default`, `center`, `two-cols`, `two-cols-header`, `image`, `image-left`, `image-right`, `iframe`, `iframe-left`, `iframe-right` | Used for the main body of technical and content-driven slides               |
-| Framed layouts  | `intro`, `fact`, `statement`, `quote`                                                                                             | Used for guided transitions, emphasized facts, short claims, and quotations |
-
-## Development
-
-Install dependencies:
+For theme development and preview:
 
 ```bash
 npm install
-```
-
-Run the preview deck locally:
-
-```bash
 npm run dev
 ```
 
-Build the preview deck:
+Useful commands:
 
 ```bash
 npm run build
-```
-
-Export static screenshots:
-
-```bash
+npm run export
 npm run screenshot -- --output docs/screenshots
 ```
 
-## Repository Structure
-
-- [`components/`](components): reusable Vue components exposed by the theme
-- [`layouts/`](layouts): Slidev layouts
-- [`styles/`](styles): shared theme styles and color system
-- [`assets/`](assets): local media and example assets
-- [`example.md`](example.md): full theme preview deck
-- [`docs/previews`](https://github.com/R-Sh1ki/slidev-theme-atlas/tree/main/docs/previews): curated preview images used by the README
+For more detailed component and layout usage examples, refer to [`example.md`](/Users/shiki/workspace/slidev-theme-atlas/example.md).
